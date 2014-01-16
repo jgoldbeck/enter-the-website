@@ -9,8 +9,25 @@ html(lang="en")
 		br
 		br
 		br
-		.download(style="margin-left:10px")
-			a(href="/fanfare_beta.zip") Download the beta
-			p If you have any suggestions, comments, or bug reports, please email us at support@fanfare.io 
+		.body(style="margin-left:10px")
+			a(href="/fanfare_beta.zip", onclick="ga('send', 'event', 'download', '/download', 'beta', 7);", target='_blank')
+				button.btn.btn-primary Download the beta
 			br
-			a(href="/") Sign up for the mailing list here
+			br
+			p If you have any suggestions, comments, or bug reports, please email us at 
+				a(href='mailto:support@fanfare.io') support@fanfare.io
+			form.form-inline(action="http://fanfare.us3.list-manage.com/subscribe/post?u=1b15a6c493485f29a99b40a3e&amp;id=e3b0a98b50" method="post" id="mc-embedded-subscribe-form", name="mc-embedded-subscribe-form", class="validate", target="_blank", novalidate)
+				p Sign up for our Beta mailing list so we can let you know when we update the app
+				.form-group(style="margin-right:10px")
+					input.form-control(type="email", value="", name="EMAIL", class="email", id="mce-EMAIL", placeholder="email address", required)
+				.form-group
+					input(type="submit", value="Subscribe", name="subscribe", id="mc-embedded-subscribe", class="btn btn-default", onclick="ga('send', 'event', 'mailing_list', 'subscribe', 'beta');")
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-47211109-1', 'fanfare.io');
+			ga('send', 'pageview');
+

@@ -11,12 +11,12 @@ html(lang="en")
 				h1 Fanfare
 				h2 In today's world, everyone deserves a spectacular entrance
 				p(style="margin-bottom:0") We intend to give it to them. Sign up to be notified when the Mac app is released
-				form.form-inline(action="http://ingresso.us3.list-manage.com/subscribe/post?u=1b15a6c493485f29a99b40a3e&amp;id=c3f8c8ae91", method="post", id="mc-embedded-subscribe-form", name="mc-embedded-subscribe-form", class="validate", target="_blank", novalidate)
+				form.form-inline(action="http://fanfare.us3.list-manage.com/subscribe/post?u=1b15a6c493485f29a99b40a3e&amp;id=087c4d008f", method="post", id="mc-embedded-subscribe-form", name="mc-embedded-subscribe-form", class="validate", target="_blank", novalidate)
 					.form-group(style="margin-right:10px")
 						label.sr-only(for="mce-EMAIL") Signup to be notified when the Mac app is released
 						input.form-control(type="email", value="", name="EMAIL", class="email", id="mce-EMAIL", placeholder="email address", required)
 					.form-group
-						input(type="submit", value="Subscribe", name="subscribe", id="mc-embedded-subscribe", class="btn btn-default")
+						input(type="submit", value="Subscribe", name="subscribe", id="mc-embedded-subscribe", class="btn btn-default", onclick="ga('send', 'event', 'mailing_list', 'subscribe', 'prelaunch_interest');")
 		.container
 			p Based on a hack created by 
 				a(href='http://twitter.com/redsh', target='_blank') Francesco Rossi
@@ -26,11 +26,17 @@ html(lang="en")
 				a(href='http://musichackday.org/', target='_blank') Music Hack Day
 				|  Boston, Fanfare
 				|  detects when a user enters the room using bluetooth signal strength
-				|  and plays their personalized entrance music - finally giving them the welcome they deserve. Features for v1.0 of the Mac app 
-				|  are still being determined, but we plan to allow the choice of songs and playlists via iTunes and 
-				a(href='http://www.rdio.com/', target='_blank') Rdio
-				| , as well as the ability to choose what times of day a grand entrance is desired
-				|  (arriving at work in the morning, returning from lunch break, coming home after a long day at the space mines).
+				|  and plays their personalized entrance music - finally giving them the welcome they deserve.
+				|  Version 1.0 of the Mac app is coming soon, so sign up for the mailing list and stay tuned...
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-47211109-1', 'fanfare.io');
+			ga('send', 'pageview');
+
 	footer
 		.container
 			p.text-muted(style="position:fixed; bottom:0") Site "design" by Joseph Goldbeck
